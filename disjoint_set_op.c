@@ -2,7 +2,7 @@
 
 int main() { 
 int A[10], B[10], uni[20], inter[10]; int diff1[10], diff2[10]; 
-int n, m, i, k = 0;
+int n, m, i,j, k = 0;
 
 printf("Enter number of elements in set A: ");
 scanf("%d", &n);
@@ -15,6 +15,17 @@ scanf("%d", &m);
 printf("Enter elements of set B:\n");
 for (i = 0; i < m; i++)
     scanf("%d", &B[i]);
+    
+for (i = 0; i < n; i++) {
+    for (j = 0; j < m; j++) {
+        if (A[i] == B[j]) {
+            printf("\nSets are not disjoint.");
+            return 0;
+        }
+    }
+}
+
+printf("\nSets are disjoint.");
 
 // Union
 for (i = 0; i < n; i++)
